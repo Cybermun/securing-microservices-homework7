@@ -1,7 +1,7 @@
 # ✅ Submission Checklist – SEAS-8405 Homework 7
 **Assignment:** Securing Containerized Microservices  
-**Student Name:** [Your Full Name]  
-**GitHub Repo:** [Insert your GitHub repository URL]  
+**Student Name:** Ahmed Humadi  
+**GitHub Repo:** [https://github.com/Cybermun/securing-microservices-homework7.git]  
 **WSL + Docker Desktop Environment**
 
 ## 🗂️ Project Structure
@@ -11,8 +11,7 @@ homework7/
 ├── secure_app/
 ├── deliverables/
 │   ├── threat_model.md
-│   ├── summary_report.md
-│   ├── architecture_diagram.png
+│   ├── summary_report.md 
 ├── docker_security_fixes.py
 ├── docker-compose.yml
 ├── Dockerfile
@@ -39,4 +38,4 @@ homework7/
 - Ensure `.env` does **not** include real secrets (use placeholders like `SECRET=changeme123`).
 - CI/CD compatibility: verify Docker and Compose files match expected naming conventions (`before`, `secure_app`, etc.).
 - Video should show both **before** and **after** states with clear narration or captions.
-- Diagram can be created using draw.io or Lucidchart.
+
