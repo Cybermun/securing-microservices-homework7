@@ -1,0 +1,11 @@
+*.pub
+*.pem
+*.key
+*.crt
+*.env
+__pycache__/
+*.zip
+git add .gitignore
+git commit -m "Add .gitignore to protect secrets"
+git push
+1
