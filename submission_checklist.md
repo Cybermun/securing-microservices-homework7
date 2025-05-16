@@ -6,12 +6,13 @@
 
 ## 🗂️ Project Structure
 ```
-homework7/
+homework7/digram.png
 ├── before/
 ├── secure_app/
 ├── deliverables/
 │   ├── threat_model.md
-│   ├── summary_report.md 
+│   ├── summary_report.md
+│   ├── digram.png
 ├── docker_security_fixes.py
 ├── docker-compose.yml
 ├── Dockerfile
