@@ -29,7 +29,7 @@ homework7/digram.png
 | ✅ Docker Hardening | Secure `Dockerfile` using slim base, non-root user, HEALTHCHECK | ✅ |
 | ✅ Compose Hardening | `docker-compose.yml` includes `read_only`, `mem_limit`, `security_opt`, port restrictions | ✅ |
 | ✅ Threat Model | `deliverables/threat_model.md` includes STRIDE, MITRE ATT&CK, and NIST 800-53 | ✅ |
-| ✅ digram | 'Flow chart' | ✅ |
+| ✅ digram | Flow chart | ✅ |
 | ✅ Security Diagram | `deliverables/architecture_diagram.png` showing hardened infrastructure | ✅ |
 | ✅ Auto-Hardening Script | `docker_security_fixes.py` updates `daemon.json`, Dockerfile, and Compose | ✅ |
 | ✅ Screen Recording | `remediation_walkthrough.mp4` includes full narration and steps | ✅ |
