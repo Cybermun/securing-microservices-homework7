@@ -36,8 +36,5 @@ homework7/digram.png
 | ✅ Summary Report | `deliverables/summary_report.md` describes steps, fixes, and reflections | ✅ |
 | ✅ GitHub Repository | Public repo with all code, reports, and assets properly named | ✅ |
 
-## 🛠️ Notes
-- Ensure `.env` does **not** include real secrets (use placeholders like `SECRET=changeme123`).
-- CI/CD compatibility: verify Docker and Compose files match expected naming conventions (`before`, `secure_app`, etc.).
-- Video should show both **before** and **after** states with clear narration or captions.
+
 
