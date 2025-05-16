@@ -2,25 +2,37 @@
 
 ## STRIDE Analysis
 
-| Threat       | Description                                      | Mitigation                            |
-|--------------|--------------------------------------------------|----------------------------------------|
-| Spoofing     | Fake IP input to ping                            | Input validation on IP addresses       |
-| Tampering    | Command injection via eval or shell              | Replaced eval, restricted ping command |
-| Repudiation  | No logging for actions                           | Add logging middleware                 |
-| Information Disclosure | Error stack traces exposed            | Return user-friendly error messages    |
-| Denial of Service | Large requests or CPU-intensive eval       | Add input size limits, use ast         |
-| Elevation of Privilege | App runs as root                      | Run container as non-root user         |
 
-## MITRE ATT&CK for Containers
+Conduct threat modeling using STRIDE and MITRE ATT&CK for Containers to identify risks and map controls.
 
-- **T1609**: Container Administration Command
-- **T1611**: Escape to Host
-- **T1203**: Exploitation for Privilege Escalation
+#### STRIDE Analysis
 
-## Mapped NIST 800-53 Controls
+| Threat Category       | Example                        | Impact                  | Mitigation            |
+|-----------------------|--------------------------------|-------------------------|-----------------------|
+| Spoofing              | No auth on `/calculate`        | Unauthorized access     | Add authentication    |
+| Tampering             | Unsafe IP input to `ping`      | Command injection       | Input validation      |
+| Repudiation           | No logging                     | Untraceable actions     | Implement logging     |
+| Information Disclosure| Hardcoded passwords            | Credential exposure     | Use environment vars  |
+| Denial of Service     | Unrestricted `ping` or `eval`  | Resource exhaustion     | Rate limiting         |
+| Elevation of Privilege| Runs as root (potential)       | System compromise       | Non-root user         |
 
-| Vulnerability        | Control     | Description                      |
-|----------------------|-------------|----------------------------------|
-| Hardcoded secrets    | SC-12       | Cryptographic Key Management     |
-| eval usage           | SA-11       | Developer Security Guidelines    |
-| Container runs as root | AC-6      | Least Privilege                  |
+#### MITRE ATT&CK Mapping
+
+| Tactic                | Technique ID | Technique Name                  | Relevance                  |
+|-----------------------|--------------|---------------------------------|----------------------------|
+| Initial Access        | T1190        | Exploit Public-Facing App       | Command injection in `/ping` |
+| Execution             | T1059        | Command and Scripting Interpreter | Unsafe `eval()`          |
+| Persistence           | T1525        | Implant Container Image         | No image validation       |
+| Privilege Escalation  | T1611        | Escape to Host                  | Root user risks           |
+| Defense Evasion       | T1211        | Exploitation for Defense Evasion | Poor isolation           |
+
+#### Controls Mapping
+
+| Issue                | Control                  | Framework Reference       |
+|----------------------|--------------------------|---------------------------|
+| Hardcoded secrets    | Use environment variables| NIST 800-53: SC-12, SC-28 |
+| Root user            | Non-root user            | NIST 800-53: AC-6, CM-6   |
+| Network exposure     | Restrict with networks   | NIST 800-53: SC-7         |
+| Missing health check | Add `HEALTHCHECK`        | CIS Docker Benchmark      |
+| Unvalidated inputs   | Strict validation        | OWASP Top 10: A1-Injection|
+
