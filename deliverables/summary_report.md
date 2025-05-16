@@ -1,8 +1,16 @@
+## Cybersecurity Architect’s Perspective: Securing the Application
+
 # Summary Report
 
 ## Introduction
 This report summarizes the process of securing a vulnerable multi-service Flask web application deployed in Docker. The original code exhibited several critical weaknesses—hardcoded secrets, unsafe use of eval(), command injection, and overly permissive container and network settings. Through code remediation, container hardening, threat modeling, and architecture redesign, we achieved a robust, defense-in-depth deployment.
 
+### Environment Setup and Initial Analysis
+
+**Application Review**: Examine `before/app.py`, `Dockerfile`, `docker-compose.yml`, and `Makefile` for vulnerabilities.
+**Assets Identified**: Flask app, PostgreSQL database, Docker images, and host system.
+**Security Goals**: Ensure confidentiality, integrity, and availability.
+**Initial Scans**: Use `make check`, `make scan`, and `make host-security` to identify issues like hardcoded credentials, command injection, and outdated images.
 
 ## Steps Taken
 1. Environment Setup:
