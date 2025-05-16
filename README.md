@@ -16,5 +16,7 @@ Visit: http://localhost:5000
 - ✅ Refactored secure app
 - ✅ Hardened Dockerfile and Compose
 - ✅ Threat model (STRIDE, MITRE, NIST)
+- ✅ Hardened Microservice Architecture
 - ✅ Python script for auto-hardening
 - ✅ Summary report and checklist
+
